@@ -1,0 +1,237 @@
+/* style.css for alizalim.com */
+
+/* fonts */
+@font-face {
+    font-family: "Sen-Bold";
+    src: url("../assets/fonts/Sen-Bold.ttf");
+}
+
+@font-face {
+    font-family: "Sen-ExtraBold";
+    src: url("../assets/fonts/Sen-Bold.ttf");
+}
+
+@font-face {
+    font-family: "Sen-Regular";
+    src: url("../assets/fonts/Sen-Regular.ttf");
+}
+
+/* color configs */
+#yellowHighlight:hover {
+    background-color: #FBF397;
+}
+
+#pinkHighlight:hover {
+    background-color: #FABDAF;
+}
+
+#greenHighlight:hover {
+    background-color: #89FAD3;
+}
+
+#purpleAccent {
+    color: #B196FA;
+}
+
+/* global styles */
+body {
+    margin: 0;
+    padding: 0% 10% 0% 10%;
+    background-color: #FBFAF6;
+}
+
+
+/* navBar styles */
+#navBar {
+    overflow: hidden;
+    background-color: transparent;
+}
+
+#navBar a {
+    float: right;
+    display: block;
+    color: #352E2E;
+    text-align: right;
+    font-size: 18px;
+    padding: 16px;
+    text-decoration: none;
+    font-family: "Sen-Regular";
+}
+
+#navBar a:hover {
+    color: #8772C1;
+    font-family: "Sen-Bold";
+}
+
+#navBar a.active {
+    color: #8772C1;
+    font-family: "Sen-Bold";
+}
+
+
+
+/* Hero section style */
+.heroDiv {
+    padding: 2% 2% 2% 4%;
+}
+
+
+.subtitle {
+    font-size: 20px;
+    font-family: "Sen-Bold";
+    color: #352E2E;
+}
+
+
+.heroTitle {
+    font-family: "Sen-ExtraBold";
+    color: #8772C1;
+}
+
+.heroText {
+    font-size: 2.5em;
+}
+
+.heroState {
+    transition-timing-function: ease-in;
+    transition: 0.5s;
+
+}
+
+.heroState:hover {
+    transition-timing-function: ease-out;
+    transition: 0.5s;
+}
+
+
+/* FLEX CONTAINERS */
+
+.flex-main-container {
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* FLEX COLUMN CLASSES */
+
+/*
+  Use .flex-col-1 class when you want
+  each of the columns to remain equal
+  in size. 
+
+  | - | - | - |
+  */
+.flex-col-1 {
+    flex: 1;
+}
+
+
+/* 
+  Use .flex-col-2 class when you want
+  one of the columns to take up twice
+  the size of the other flex boxes.
+
+  |  -  | -| -|
+  */
+.flex-col-2 {
+    flex: 2;
+}
+
+/* 
+  Use .flex-col-3 class when you want
+  one of the columns to take up three
+  times the size of the other flex 
+  boxes.
+
+  |   -   |-|-|
+  */
+.flex-col-3 {
+    flex: 3;
+}
+
+
+/*
+  This Media Query checks if the screen has reached
+  a max width of 768 pixels. If it has, the flex 
+  direction for the main container will change to 
+  'column'. This would cause the child flex 
+  containers to change their orientation from
+  rendering side by side to stacked vertically
+  on top of one another.
+  */
+@media screen and (max-width: 768px) {
+    .flex-main-container {
+        flex-direction: column-reverse;
+    }
+}
+
+
+/* Work card divs */
+.project-card {
+    box-shadow: 10px 10px 5px rgba(218, 218, 218, 0.85);
+    border-radius: 25px;
+}
+
+.card-image img {
+    width: 180px;
+    height: 230px;
+    object-fit: contain;
+}
+
+#card-details {}
+
+
+
+
+
+
+
+.workDetailDiv {
+    padding: 2% 2% 2% 4%;
+
+
+}
+
+.workImageDiv {
+    padding: 2% 2% 2% 4%;
+}
+
+.workImageDiv img {
+    width: 80%;
+    height: 80%;
+}
+
+#workHeaderText {
+    font-family: "Sen-Bold";
+    font-size: 24sp;
+
+
+}
+
+#workSubtitleText {
+    font-family: "Sen-Regular";
+    font-size: 20sp;
+}
+
+#workDescriptionText {
+    font-family: "Sen-Regular";
+    font-size: 18sp;
+}
+
+#purpleBackground {
+    background-color: #B196FA;
+}
+
+#greenBackground {
+    background-color: #89FAD3;
+}
+
+#pinkBackground {
+    background-color: #FABDAF;
+}
+
+#yellowBackground {
+    background-color: beige;
+}
