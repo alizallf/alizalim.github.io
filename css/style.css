@@ -1,6 +1,31 @@
 /* style.css for alizalim.com */
 
-/* fonts */
+/* GLOBAL STYLES */
+* {
+    box-sizing: border-box;
+  }
+
+body {
+    margin: 0;
+    padding: 0% 10% 0% 10%;
+    background-color: #FBFAF6;
+}
+
+hr {
+    display: block;
+    height: 2px;
+    border: 0;
+    border-top: 1px solid #797878;
+    margin: 1em 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* FONTS */
 @font-face {
     font-family: "Sen-Bold";
     src: url("../assets/fonts/Sen-Bold.ttf");
@@ -16,7 +41,27 @@
     src: url("../assets/fonts/Sen-Regular.ttf");
 }
 
-/* color configs */
+/* COLOR CONFIGS */
+#purpleBackground {
+    background-color: #C1ABFB;
+}
+
+#greenBackground {
+    background-color: #9FF3D5;
+}
+
+#pinkBackground {
+    background-color: #FABDAF;
+}
+
+#yellowBackground {
+    background-color: #F8EF8D;
+}
+
+#redBackground {
+    background-color: #FFB5A4;
+}
+
 #yellowHighlight:hover {
     background-color: #FBF397;
 }
@@ -33,46 +78,89 @@
     color: #B196FA;
 }
 
-/* global styles */
-body {
-    margin: 0;
-    padding: 0% 10% 0% 10%;
-    background-color: #FBFAF6;
+#purplePill {
+    background-color: #8054fa;
+}
+
+#greenPill {
+    background-color: #2dd184;
+}
+
+#yellowPill {
+    background-color: #e2b22f;
+}
+
+#redPill {
+    background-color: #fa5454;
 }
 
 
-/* navBar styles */
-#navBar {
+/* NAVBAR STYLES */
+.navBar {
+    position: sticky;
+    top: 0;
+    z-index: 999;
     overflow: hidden;
-    background-color: transparent;
+    background-color: transparent; /* Set initial background color to transparent */
+    transition: background-color 0.3s ease; /* Add transition effect */
 }
 
-#navBar a {
-    float: right;
-    display: block;
+.navBar a {
     color: #352E2E;
-    text-align: right;
     font-size: 18px;
     padding: 16px;
     text-decoration: none;
     font-family: "Sen-Regular";
+    float: right; /* Align items to the right */
 }
 
-#navBar a:hover {
+.navBar a:hover,
+.navBar a.active {
     color: #8772C1;
     font-family: "Sen-Bold";
 }
 
-#navBar a.active {
-    color: #8772C1;
-    font-family: "Sen-Bold";
+.icon {
+    display: none;
+    cursor: pointer;
+}
+
+.navbar-shadow {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-solid {
+    background-color: #ffffff; /* Set the background color to white */
+}
+
+  
+
+/* GLOBAL CONTAINERS */
+
+/* FLOAT CONTAINER */
+.float-container {
+    padding: 2.25% 10% 2.25% 10%;
+    float: left;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    margin: 0;
+  }
+
+
+/* GRID CONTAINER */
+.grid-main-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 40px;
 }
 
 
 
 /* Hero section style */
 .heroDiv {
-    padding: 2% 2% 2% 4%;
+    margin-bottom: 60px;
 }
 
 
@@ -103,135 +191,214 @@ body {
     transition: 0.5s;
 }
 
+/* PROJECT STYLES */
+#work-header-text {
+    color: #4fb693;
+    font-family: "Sen-ExtraBold";
+    font-size: 3rem;
+}
 
-/* FLEX CONTAINERS */
-
-.flex-main-container {
-    width: 100%;
+.card-container {
     display: flex;
-    box-sizing: border-box;
-    flex-direction: row;
-    align-items: center;
-}
-
-/* FLEX COLUMN CLASSES */
-
-/*
-  Use .flex-col-1 class when you want
-  each of the columns to remain equal
-  in size. 
-
-  | - | - | - |
-  */
-.flex-col-1 {
-    flex: 1;
-}
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: center;
+    width: 100%;
+    row-gap: 20px;
+  }
 
 
-/* 
-  Use .flex-col-2 class when you want
-  one of the columns to take up twice
-  the size of the other flex boxes.
+/* .project-card {
+    width: 24%;
+    background-color: transparent;
+    border-radius: 25px;
+} */
 
-  |  -  | -| -|
-  */
-.flex-col-2 {
-    flex: 2;
-}
-
-/* 
-  Use .flex-col-3 class when you want
-  one of the columns to take up three
-  times the size of the other flex 
-  boxes.
-
-  |   -   |-|-|
-  */
-.flex-col-3 {
-    flex: 3;
-}
-
-
-/*
-  This Media Query checks if the screen has reached
-  a max width of 768 pixels. If it has, the flex 
-  direction for the main container will change to 
-  'column'. This would cause the child flex 
-  containers to change their orientation from
-  rendering side by side to stacked vertically
-  on top of one another.
-  */
-@media screen and (max-width: 768px) {
-    .flex-main-container {
-        flex-direction: column-reverse;
-    }
-}
-
-
-/* Work card divs */
 .project-card {
-    box-shadow: 10px 10px 5px rgba(218, 218, 218, 0.85);
+    flex-basis: calc(24% - 20px);
+    background-color: transparent;
+    border-radius: 25px;
+    margin-bottom: 20px;
+  }
+
+.project-card-image-holder {
+    width: inherit;
+    height: inherit;
+}
+
+.project-card-image-holder img {
+    transition: opacity 0.3s;
+    max-width: 100%;
+    height: auto;
+}
+
+.project-card 
+a, a:link, 
+a:visited, 
+a:hover, 
+a:active {
+    text-decoration: none;
+    font-weight: inherit;
+}
+
+
+
+/* WORD EXPERIENCE STYLES */
+#work-ex-header-text {
+    margin-top: 0;
+    color: #a78de7;
+    font-family: "Sen-ExtraBold";
+    font-size: 3rem;
+}
+
+.work-ex-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+  
+  .work-experience-card {
+    flex-basis: calc(50% - 10px); 
+    margin-bottom: 20px;
+    background-color: transparent;
     border-radius: 25px;
 }
 
-.card-image img {
-    width: 180px;
-    height: 230px;
-    object-fit: contain;
+.work-experience-card-image-holder {
+    width: inherit;
+    height: inherit;
 }
 
-#card-details {}
-
-
-
-
-
-
-
-.workDetailDiv {
-    padding: 2% 2% 2% 4%;
-
-
+.work-experience-card-image-holder img {
+    transition: opacity 0.3s;
+    max-width: 100%;
+    height: auto;
 }
 
-.workImageDiv {
-    padding: 2% 2% 2% 4%;
+
+/* Img Container Styles */
+
+
+.global-img-main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 60px;
+  }
+  
+  .img-container {
+    width: 100%;
+  }
+  
+  .img-container img {
+    width: 100%;
+    height: auto;
+  }
+  
+
+
+/* Footer Styles */
+
+
+.footer-grid-main-container {
+    grid-template-columns: 2fr 1fr;
+    margin-bottom: 80px;
 }
 
-.workImageDiv img {
-    width: 80%;
-    height: 80%;
-}
-
-#workHeaderText {
-    font-family: "Sen-Bold";
-    font-size: 24sp;
-
-
-}
-
-#workSubtitleText {
+.footer-article p {
+    color: #414346;
     font-family: "Sen-Regular";
-    font-size: 20sp;
+    font-size: 1.5rem;
+    margin-top: 2%;
+    margin-bottom: 2%;
 }
 
-#workDescriptionText {
-    font-family: "Sen-Regular";
-    font-size: 18sp;
+.footer-links {
+    
 }
 
-#purpleBackground {
-    background-color: #B196FA;
+.footer-links a {
+    text-decoration: none;
 }
 
-#greenBackground {
-    background-color: #89FAD3;
+.footer-links img {
+    width: 80px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, 
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    border-radius: 20px;
+    margin-right: 20px;
+
+    transition-duration: 0.6s;
 }
 
-#pinkBackground {
-    background-color: #FABDAF;
+.footer-links :hover img {
+    width: 90px;
+    margin-bottom: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, 
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+
+    filter: hue-rotate(60deg);
+
 }
 
-#yellowBackground {
-    background-color: beige;
+/* ---------------------------------------------------------------------------------------------- */
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 600px) {
+    .work-experience-card {
+      flex-basis: 100%; 
+    }
 }
+
+@media (max-width: 768px) {
+    .skill-container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .heroText {
+        font-size: 1.5em;
+    }
+
+    .heroDiv {
+        margin-bottom: 10px;
+    }
+
+    .global-img-main-container {
+        margin-bottom: 10px;
+    }
+
+    .project-card {
+        flex: 0 0 calc(50% - 20px); /* Adjusted width calculation for smaller screens */
+      }
+
+      .work-ex-card-container {
+        margin-bottom: 10px;
+      }
+
+      /* NAVBAR MEDIA QUERIES */
+      #navBar {
+        flex-wrap: wrap;
+        justify-content: center;
+        height: auto; /* Added */
+      }
+      
+      #navBar a:not(.icon) {
+        display: none;
+      }
+      
+      #navBar a.icon {
+        display: block;
+        padding: 16px;
+      }
+      
+      #navBar.responsive a:not(.icon) {
+        display: block; /* Changed to block */
+        padding: 16px;
+        text-align: center; /* Added */
+        width: 100%; /* Added */
+        border-bottom: 1px solid #8772C1; /* Added */
+      }
+  }
