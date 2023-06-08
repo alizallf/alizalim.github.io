@@ -3,120 +3,214 @@
 
 <head>
     <title>Aliza Lim</title>
-    <link rel="stylesheet" href="./css/style.css" type="text/css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="./css/style.css" type="text/css"/>
 </head>
 
 <body>
 
     <!-- Nav Bar -->
-    <div id="navBar">
-        <a href="#">About</a>
-        <a href="#">Work</a>
+    <div class="navBar">
+        <a href="#aboutMe">About Me!</a>
+        <a href="#workExperience">Work Experience</a>
+        <a href="#work">Projects I've Worked On</a>
         <a class="active" href="#home">Home</a>
+        <a href="javascript:void(0);" class="icon">&#9776;</a>
     </div>
 
     <!-- Home -->
     <span id="home">
-        <div class="flex-main-container">
-
-            <!-- HERO DIV -->
-            <div class="flex-col-1 heroDiv">
-                <h1 class="heroTitle"> <span class="subtitle">Hi my name is</span> <br>
-                    <span class="heroText">
-                        <span class="heroState" id="yellowHighlight">Aliza Lim</span> <br> <span id="purpleAccent">I'm a
-                            <span class="heroState" id="greenHighlight">UX Designer</span> <br>
-                            Based in <span class="heroState" id="pinkHighlight"> the UK. </span></span>
-                    </span>
-                </h1>
-            </div>
+        <!-- HERO DIV -->
+        <div class="heroDiv">
+            <h1 class="heroTitle"> <span class="subtitle">Hi my name is</span> <br>
+                <span class="heroText">
+                    <span class="heroState" id="yellowHighlight">Aliza Lim</span> <br> <span id="purpleAccent">I'm a
+                        <span class="heroState" id="greenHighlight">UX Designer</span> <br>
+                        Based in <span class="heroState" id="pinkHighlight"> the UK. </span></span>
+                </span>
+            </h1>
         </div>
     </span>
 
-    <span id="Work">
+    <!-- Work -->
+    <span id="work">
 
-        <!-- Top two cards-->
-        <div class="flex-main-container">
+        <!-- Work Header Container -->
+        <div class="grid-main-container" style="grid-template-columns: 1fr;">
+            <h1 id="work-header-text">Projects I've Worked On</h1>
+        </div>
+
+        <!-- Work Cards-->
+        <div class="card-container">
+
             <!-- At your pace card -->
-            <div class="flex col-1">
-                <div class="project-card">
-                    <div class="flex-main-container">
-                        <div class="flex-col-1 card-image">
-                            <img src="./assets/img/atYourPace.png">
-                        </div>
-
-                        <div class="flex-col-2" id="card-details">
-                            <h1 id="card-header-text">At Your Pace</h1>
-                            <p id="card-paragraph-text">Revolutionising Classroom Education.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-        </div>
-
-        <!-- IlluminAte card -->
-        <div class="flex col-1">
             <div class="project-card">
-                <div class="flex-main-container">
-                    <div class="flex-col-1 card-image">
-                        <img src="./assets/img/illuminate.png">
+                <a
+                href="https://www.behance.net/gallery/171576373/At-Your-Pace-Revolutionising-Classroom-Education">
+                    <div class="project-card-image-holder">
+                        <img src="./assets/img/ayp-normal.png" alt="at your pace" id="ayp-img">
                     </div>
+                </a>
+            </div> <!-- END OF: At your pace card -->
 
-                    <div class="flex-col-2" id="card-details">
-                        <h1 id="card-header-text">IlluminAte</h1>
-                        <p id="card-paragraph-text">Shining the light on sustainable diets.</p>
+
+            <!-- IlluminAte card  -->
+            <div class="project-card">
+                <a 
+                href="https://www.behance.net/gallery/171579501/IlluminAte-Shining-the-Light-on-Sustainable-Diets">
+                    <div class="project-card-image-holder">
+                        <img src="./assets/img/ia-normal.png" alt="IlluminAte" id="ia-img">
                     </div>
-                </div>
-            </div>
-        </div>
+                </a>
+            </div> <!-- END OF: IlluminAte card -->
 
-        </div>
-
-
-        <!-- Bottom two cards-->
-        <div class="flex-main-container">
 
             <!-- NeighbourHoot card -->
-            <div class="flex col-1">
-                <div class="project-card">
-                    <div class="flex-main-container">
-                        <div class="flex-col-1 card-image">
-                            <img src="./assets/img/neighbourhoot-img.png">
-                        </div>
-
-                        <div class="flex-col-2" id="card-details">
-                            <h1 id="card-header-text">NeighbourHoot: Owl Take It!</h1>
-                            <p id="card-paragraph-text">A gamified interactive asynchronous exchange platform.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- Famileaf card -->
-        <div class="flex col-1">
             <div class="project-card">
-                <div class="flex-main-container">
-                    <div class="flex-col-1 card-image">
-                        <img src="./assets/img/famiLeaf.png">
+                <a 
+                href="https://www.behance.net/gallery/171579807/NeighbourHoot-A-Gamified-Exchange-Platform">
+                    <div class="project-card-image-holder">
+                        <img src="./assets/img/nh-normal.png" alt="NeighbourHoot" id="nh-img">
                     </div>
+                </a>
+            </div> <!-- END OF: NeighbourHoot card -->
 
-                    <div class="flex-col-2" id="card-details">
-                        <h1 id="card-header-text">FamiLeaf</h1>
-                        <p id="card-paragraph-text">Reimagining Instant Messaging through Human-Plant Relationship​.</p>
+
+            <!-- FamiLeaf card -->
+            <div class="project-card">
+                <a 
+                href="https://www.behance.net/gallery/171578421/FamiLeaf-Reimagining-Instant-Messaging">
+                    <div class="project-card-image-holder">
+                        <img src="./assets/img/fl-normal.png" alt="FamiLeaf" id="fl-img">
                     </div>
-                </div>
-            </div>
-        </div>
-
-        </div>
+                </a>
+            </div> <!-- END OF: FamiLeaf card -->
 
 
-
+        </div> <!-- END OF: Work Cards-->
 
     </span> <!-- End of Work span -->
+
+
+    <!-- Work Experience Span-->
+    <span id="workExperience">
+
+        <!-- Work Experience Header Container -->
+        <div class="grid-main-container" style="grid-template-columns: 1fr;">
+            <h1 id="work-ex-header-text">Work Experience</h1>
+        </div>
+
+        <!-- Work Experience Cards-->
+        <div class="work-ex-card-container">
+
+            <div class="work-experience-card">
+                <div class="work-experience-card-image-holder">
+                    <img src="./assets/img/ra-normal.png"/>
+                </div>
+            </div>
+
+            <div class="work-experience-card">
+                <div class="work-experience-card-image-holder">
+                    <img src="./assets/img/dm-normal.png"/>
+                </div>
+            </div>
+
+            <div class="work-experience-card">
+                <div class="work-experience-card-image-holder">
+                    <img src="./assets/img/sa-normal.png"/>
+                </div>
+            </div>
+
+            <div class="work-experience-card">
+                <div class="work-experience-card-image-holder">
+                    <img src="./assets/img/dms-normal.png"/>
+                </div>
+            </div>
+
+        </div> <!-- END OF: Work Experience Cards-->
+
+    </span> <!-- End of Work Experience span -->
+
+
+    <!-- Skills Span-->
+    <span id="skills">
+
+        <div class="global-img-main-container">
+
+            <div class="img-container">
+                <img src="./assets/img/Skills.png"/>
+            </div>
+
+        </div>
+
+
+    </span> <!-- End of Skills Span -->
+
+
+    <!-- About Me Span-->
+    <span id="aboutMe">
+
+        <div class="global-img-main-container">
+
+            <div class="img-container">
+                <img src="./assets/img/about-me.png"/>
+            </div>
+
+        </div>
+
+        <div class="grid-main-container footer-grid-main-container">
+
+            <div class="footer-article">
+                <p>
+                    Like a <b style="color: #fa5454;">copy of my CV</b>, 
+                    or just want to 
+                    <b style="color: #8054fa;">reach out for a chat?</b><br> 
+                    Email me at
+                    <a href="
+                    mailto:alizalf.lim@gmail.com?
+                    &subject=I&rsquo;d like a Copy of your CV Please!
+                    &body=I like what I see, send me the Cveee" style="color: #8054fa;">
+                    alizalf.lim@gmail.com!
+                    </a>
+                    
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <a href="">
+                    <img src="./assets/img/behance.png" />
+                </a>
+                <a href="">
+                    <img src="./assets/img/linkedin.png" />
+                </a>
+                <a href="">
+                    <img src="./assets/img/email.png" />
+                </a>
+            </div>
+
+        </div>
+
+    </span> <!-- End Of About Me Span-->
+
+<!-------------------------------------------------------------------------------------------------------------------->
+<!-- SCRIPTS -->    
+
+<!-- J Query -->
+<script src="https://code.jquery.com/jquery-3.7.0.min.js" 
+integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" 
+crossorigin="anonymous"></script>
+
+<!-- J Query UI -->
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" 
+integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" 
+crossorigin="anonymous"></script>
+
+<!-- J Query Draw SVG -->
+<script src="https://cdn.jsdelivr.net/jquery.drawsvg/1/jquery.drawsvg.min.js"></script>
+
+<!-- Main JS Script -->
+<script type="text/javascript" src="./js/main.js"></script>
+
 
 </body>
 
